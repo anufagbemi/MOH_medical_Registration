@@ -14,10 +14,8 @@ SOURCES += \
         patientHistory.cpp
 
 INCLUDEPATH += \
-    -I/../../Database/includes/
+    -I/../../ThirdParty/includes/
 
-#LIBS += \
-#    -L/../../Database/lib/ -lsqlite3
 
 
 # Default rules for deployment.
@@ -32,11 +30,11 @@ HEADERS += \
     patient.h \
     patientHistory.h
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../Database/lib/ -lsqlite3
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Database/lib/ -lsqlite3
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../ThirdParty/lib/ -lsqlite3
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../ThirdParty/lib/ -lsqlite3
 
-INCLUDEPATH += $$PWD/../Database/includes
-DEPENDPATH += $$PWD/../Database/includes
+INCLUDEPATH += $$PWD/../ThirdParty/includes
+DEPENDPATH += $$PWD/../ThirdParty/includes
 
 DISTFILES += \
     metaFile
